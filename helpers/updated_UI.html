@@ -179,7 +179,50 @@
   <p>Content is spaced out within the larger container.</p>
 </div>
 <!-- End of Jumbotron -->
-<br></div>
+	<br></div><a id="attribution"></a>
+	            <hr>
+        <h2>Attribution</h2>
+        <h3>Floated image</h3>
+        <p>This provides an image and attribution placeholder, that can be "swapped out" with your own image and attribution</p>
+<div class="copythis"><!-- Image placheloder - Right floated image -->
+<div class="float-right" style="float: right; width: 30%; max-width: 320px; min-width: 200px; margin:0 0 10px 20px !important">
+    <img src="https://via.placeholder.com/320x180?text=Replace+Me" width="320" height="235" alt="" class="img-responsive atto_image_button_text-bottom">
+    <div class="text-muted" style="opacity: 0.5">
+        <small>Attribution goes here</small>
+    </div>
+</div>
+<!-- End of image placeholder --></div>
+<div class="clearfix container-fluid"></div>
+        <hr>
+        <h3>Attribution only</h3>
+        <p>Often, when you copy an attribution statement from elsewhere (eg wikimedia) the text is too large and it dominates the screen. This reduces the test size and opacity, to make this attribution less dominant</p>
+<div class="copythis"><!-- Attribution -->
+<div style="opacity: 0.6">
+    <small>Paste your attribution statement here</small>
+</div>
+<!-- End of attribution --></div>
+        <hr>
+        <h3>Attribution statement for 'Reproduced with Permission' content</h3>
+        <p>This UI elelemt is for when permission has been granted by the copyright owner. </p>
+        <p> When updating the 'Source:' statement, change the text is square brackets to reflect the source and copyright status</p>
+<div class="copythis"><!-- Start of 'Reproduced with permission' statement -->
+<blockquote>
+    <p>Attributable content goes here</p>
+    <!-- Start of Show/Hide interface -->
+    <div class="text-muted" style="opacity: 0.6">
+        <small><a class="collapsed d-print-block" data-toggle="collapse" href="#Attribution1" role="button" aria-expanded="false" aria-controls="Attribution1">
+                Source</a>:</small>
+    </div>
+    <div class="collapse" id="Attribution1" style="">
+        <div class="card card-body">
+            <div class="text-muted" style="opacity: 0.6">
+                <small>[Title and year of publication], p[XX]. <br>© [Copyright owner]. Reproduced with permission.
+                    <a class="btn-block btn btn-sm btn-light collapsed" data-toggle="collapse" href="#Attribution1" role="button" aria-expanded="false" aria-controls="Attribution1">Hide</a></small>
+            </div>
+        </div>
+    </div>
+</blockquote>
+<!-- end of 'Reproduced with permission' statement --></div>
 	    <hr>
         <h2 id="boxes">Boxes</h2>
 <div class="copythis"><!-- Think box -->
@@ -807,49 +850,6 @@ replace all instances of "accordion-1" with accordion-2" (etc)
     </tbody>
 </table>
 <!-- End of table --></div>
-        <hr>
-        <h2 id="attribution">Attribution</h2>
-        <h3>Floated image</h3>
-        <p>This provides an image and attribution placeholder, that can be "swapped out" with your own image and attribution</p>
-<div class="copythis"><!-- Image placheloder - Right floated image -->
-<div class="float-right" style="float: right; width: 30%; max-width: 320px; min-width: 200px; margin:0 0 10px 20px !important">
-    <img src="https://via.placeholder.com/320x180?text=Replace+Me" width="320" height="235" alt="" class="img-responsive atto_image_button_text-bottom">
-    <div class="text-muted" style="opacity: 0.5">
-        <small>Attribution goes here</small>
-    </div>
-</div>
-<!-- End of image placeholder --></div>
-<div class="clearfix container-fluid"></div>
-        <hr>
-        <h3>Attribution only</h3>
-        <p>Often, when you copy an attribution statement from elsewhere (eg wikimedia) the text is too large and it dominates the screen. This reduces the test size and opacity, to make this attribution less dominant</p>
-<div class="copythis"><!-- Attribution -->
-<div style="opacity: 0.6">
-    <small>Paste your attribution statement here</small>
-</div>
-<!-- End of attribution --></div>
-        <hr>
-        <h3>Attribution statement for 'Reproduced with Permission' content</h3>
-        <p>This UI elelemt is for when permission has been granted by the copyright owner. </p>
-        <p> When updating the 'Source:' statement, change the text is square brackets to reflect the source and copyright status</p>
-<div class="copythis"><!-- Start of 'Reproduced with permission' statement -->
-<blockquote>
-    <p>Attributable content goes here</p>
-    <!-- Start of Show/Hide interface -->
-    <div class="text-muted" style="opacity: 0.6">
-        <small><a class="collapsed d-print-block" data-toggle="collapse" href="#Attribution1" role="button" aria-expanded="false" aria-controls="Attribution1">
-                Source</a>:</small>
-    </div>
-    <div class="collapse" id="Attribution1" style="">
-        <div class="card card-body">
-            <div class="text-muted" style="opacity: 0.6">
-                <small>[Title and year of publication], p[XX]. <br>© [Copyright owner]. Reproduced with permission.
-                    <a class="btn-block btn btn-sm btn-light collapsed" data-toggle="collapse" href="#Attribution1" role="button" aria-expanded="false" aria-controls="Attribution1">Hide</a></small>
-            </div>
-        </div>
-    </div>
-</blockquote>
-<!-- end of 'Reproduced with permission' statement --></div>
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
