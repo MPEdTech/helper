@@ -12,7 +12,7 @@ $(function() {
     let site = "";
     let site_url = "";
     let id = ""; // Image ID
-    let img_name = "Photo"; // Image name.   Defualt to "Photo"
+    let img_name = "Image"; // Image name.   Default to "Photo"
     let img_orig = ""; // Link to original image
     let img_src = ""; // src of image to be displayed in page
     let download_sml = ""; // Small image 960px wide
