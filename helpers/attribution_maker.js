@@ -60,7 +60,7 @@ $(function() {
         id = img_orig.substring(n + 1);
         site_url = "https://unsplash.com";
         licence = "Unsplash Licence";
-        licence_url = "https://unsplash.com/licence";
+        licence_url = "https://unsplash.com/license";
 
         // API call
         uri = "https://api.unsplash.com/photos/" + id + "?client_id=336b527b2e18d045045820b78062b95c825376311326b2a08f9b93eef7efc07b";
