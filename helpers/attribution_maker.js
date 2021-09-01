@@ -59,7 +59,7 @@ $(function() {
         n = img_orig.lastIndexOf('/');
         id = img_orig.substring(n + 1);
         site_url = "https://unsplash.com";
-        licence = "Unsplash Licence";
+        licence = "Licence";
         licence_url = "https://unsplash.com/license";
 
         // API call
@@ -86,7 +86,7 @@ $(function() {
         id = re.exec(img_orig)[0];
         console.log("@GB: Pexels id = ", id);
         site_url = "https://pexels.com/";
-        licence = "Pexels  Licence";
+        licence = "Licence";
         licence_url = "https://www.pexels.com/license/";
         api_key = "563492ad6f91700001000001bfeffd077baf454dab29d6300bdf740d";
         uri = "https://api.pexels.com/v1/photos/" + id;
@@ -270,7 +270,7 @@ $(function() {
         <!-- Start of Show/Hide interface, ID = ${id}-${i} -->
         <a class="source-btn" data-toggle="collapse" href="#show-${id}-${i}" role="button" aria-expanded="false" aria-controls="show-${id}-${i}">&#9660; Show attribution</a>
         <div class="source collapse m-0 p-0" id="show-${id}-${i}">` : ''}
-        <a href="${img_orig}" target="_blank">${img_name}</a> by <a href="${user_url}" target="_blank">${user}</a> from <a href="${site_url}" target="_blank">${site}</a>, <a href="${licence_url}" target="_blank">${licence}</a>.${startCollapsed ? `</div>
+        <a href="${img_orig}" target="_blank">${img_name}</a> by <a href="${user_url}" target="_blank">${user}</a> from <a href="${site_url}" target="_blank">${site}</a>, <a href="${licence_url}" target="_blank">${licence}</a>, added on ${today}${startCollapsed ? `</div>
         <!-- End of Show/Hide interface, ID = ${id}-${i} -->` : ''}
     </small>
 </figcaption>`;
