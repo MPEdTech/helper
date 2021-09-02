@@ -88,7 +88,7 @@ $(function() {
         site_url = "https://pexels.com/";
         licence = "Licence";
         licence_url = "https://www.pexels.com/license/";
-        api_key = "563492ad6f91700001000001bfeffd077baf454dab29d6300bdf740d";
+        api_key = "563492ad6f91700001000001bd31ce789c34409c931a6c42d10af8e5";
         uri = "https://api.pexels.com/v1/photos/" + id;
 
         $.ajax({
@@ -122,9 +122,9 @@ $(function() {
         id = re.exec(img_orig)[0];
         console.log("@GB: Pixabay id = ", id);
         site_url = "https://pixabay.com/";
-        licence = "Pixabay Licence";
+        licence = "Licence";
         licence_url = "https://pixabay.com/service/license/";
-        api_key = "11445-7c3e3173d6f9a6047e64583ca";
+        api_key = "23200140-02ba1576bde9ce669f28784f8";
         uri = "https://pixabay.com/api/?key=" + api_key + "&id=" + id;
 
         $.getJSON(uri, function() {})
