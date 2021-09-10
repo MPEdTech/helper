@@ -209,7 +209,7 @@ $(function() {
             startCollapsed = false;
             buildHTML();
         } else {
-            startCollapsed = true;
+            startCollapsed = false;
             buildHTML();
         }
     });
