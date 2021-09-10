@@ -23,7 +23,7 @@ $(function() {
     let licence = "";
     let licence_url = "";
     let title = null; //If a title is set, this will be used
-    let startCollapsed = true;
+    let startCollapsed = false;
     let width = "col-5"; // Default width for floated images
     // Get URL parameters
     url_string = window.location.href;
