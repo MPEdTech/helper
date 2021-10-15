@@ -134,7 +134,7 @@ $(function() {
                 img_src = data.hits[0].largeImageURL;
                 console.log("@GB: img_src = ", img_src);
                 user = data.hits[0].user;
-                user_url = data.hits[0].userImageURL;
+                user_url = "https://pixabay.com/users/" + user;
                 alt = data.hits[0].tags;
                 img_name = "Image";
                 download_sml = data.hits[0].webformatURL; // Small image 640px wide
