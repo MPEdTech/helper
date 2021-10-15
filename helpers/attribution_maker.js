@@ -2,7 +2,7 @@
  * @Author: Greg Bird (@BirdyOz, greg.bird.oz@gmail.com)
  * @Date:   2018-05-10 10:37:58
  * @Last Modified by:   MPEdTech
- * @Last Modified time: 2021-09-13 07:50:57
+ * @Last Modified time: 2021-10-15 16:33:57
  */
 
 $(function() {
@@ -66,17 +66,16 @@ $(function() {
         uri = "https://api.unsplash.com/photos/" + id + "?client_id=336b527b2e18d045045820b78062b95c825376311326b2a08f9b93eef7efc07b";
 
         $.getJSON(uri, function(result) {
-            console.log("@GB: result = ", result);
-            img_src = result.urls.regular;
-            console.log("@GB: img_src = ", img_src);
-            user = result.user.username;
-            user_url = result.user.links.html;
-            title = result.description;
-            alt = result.alt_description;
+            img_src = json.urls.regular;
+            user = json.user.username;
+            user_url = json.user.links.html;
+            title = json.description;
+            alt = json.alt_description;
             download_lge = img_src.replace("&w=1080", "&w=1440");
             img_src = download_lge;
             download_sml = img_src.replace("&w=1440", "&w=720");
             buildHTML();
+            logger(json);
         });
     }
 
@@ -94,24 +93,19 @@ $(function() {
         $.ajax({
             url: uri,
             dataType: 'json',
-            headers: { 'Authorization': api_key },
-            success: function(data) {
-                console.log("@GB: data = ", data);
-                img_orig = data.src.original;
-                console.log("@GB: img_orig = ", img_orig);
-                img_src = img_orig + "?auto=compress&cs=tinysrgb&w=1440";
-                console.log("@GB: img_src = ", img_src);
-                user = data.photographer;
-                console.log("@GB: user = ", user);
-                user_url = data.photographer_url;
-                console.log("@GB: user_url = ", user_url);
-                alt = data.url.split("/")[4].split("-");
+            headers: { 'Authorization': atob(decodeURIComponent(key)) },
+            success: function(json) {
+                img_src = json.src.original;
+                img_src = img_src + "?auto=compress&cs=tinysrgb&w=1440";
+                user = json.photographer;
+                user_url = json.photographer_url;
+                alt = json.url.split("/")[4].split("-");
                 alt.pop();
                 alt = alt.join(" ");
-                console.log("@GB: alt = ", alt);
-                download_sml = img_orig + "?auto=compress&cs=tinysrgb&w=720";
+                download_sml = img_src + "?auto=compress&cs=tinysrgb&w=720";
                 download_lge = img_src;
                 buildHTML();
+                logger(json);
             }
         });
     }
@@ -120,26 +114,23 @@ $(function() {
     if (site == "Pixabay") {
         re = /[0-9]+/gi;
         id = re.exec(img_orig)[0];
-        console.log("@GB: Pixabay id = ", id);
         site_url = "https://pixabay.com/";
         licence = "Licence";
         licence_url = "https://pixabay.com/service/license/";
-        api_key = "23200140-02ba1576bde9ce669f28784f8";
-        uri = "https://pixabay.com/api/?key=" + api_key + "&id=" + id;
+        key = "23200140-02ba1576bde9ce669f28784f8";
+        uri = "https://pixabay.com/api/?key=" + atob(decodeURIComponent(key)) + "&id=" + id;
 
         $.getJSON(uri, function() {})
             .done(function(data) {
-                console.log("second success");
-                console.log("@GB: data = ", data.hits[0]);
                 img_src = data.hits[0].largeImageURL;
-                console.log("@GB: img_src = ", img_src);
                 user = data.hits[0].user;
-                user_url = data.hits[0].userImageURL;
+                user_url = "https://pixabay.com/users/" + user;
                 alt = data.hits[0].tags;
                 img_name = "Image";
                 download_sml = data.hits[0].webformatURL; // Small image 640px wide
                 download_lge = img_src; // Large image 1280px wide
                 buildHTML();
+                logger(json);
             });
     }
 
@@ -161,31 +152,26 @@ $(function() {
                 json = data.query.pages[-1];
                 console.log("@GB: json = ", json);
                 img_src = json.imageinfo[0].thumburl;
-                console.log("@GB: img_src = ", img_src);
                 user = json.imageinfo[0].user;
                 user_url = "https://commons.wikimedia.org/wiki/User:" + user.replace(" ", "_");
-                console.log("@GB: user_url = ", user_url);
                 alt = json.imageinfo[0].extmetadata.ObjectName.value;
-                console.log("@GB: alt = ", alt);
                 img_name = "Image";
-                download_sml = img_src.replace("1440px", "720px"); // Small image 720px wide
-                console.log("@GB: download_sml = ", download_sml);
-                download_lge = img_src; // Large image 1440px wide
-                console.log("@GB: download_lge = ", download_lge);
+                download_lge = download_sml = img_src; // Small image 720px wide
+                if (json.imageinfo[0].thumbwidth >= 720) {
+                    download_lge = json.imageinfo[0].responsiveUrls[2]; // Large image 1440px wide
+                    img_src = download_lge;
+                }
                 licence = json.imageinfo[0].extmetadata.LicenseShortName.value;
-                console.log("@GB: licence = ", licence);
+                // Exception for public domain images
                 try {
                     licence_url = json.imageinfo[0].extmetadata.LicenseUrl.value;
                 } catch (error) {
                     console.error("Error: " + error);
-                    // expected output: ReferenceError: nonExistentFunction is not defined
-                    // Note - error messages will vary depending on browser
                     licence_url = "https://en.wikipedia.org/wiki/Public_domain";
                 }
-                console.log("@GB: licence_url = ", licence_url);
                 id = id.slugify();
-                console.log("@GB: Sluggified id = ", id);
                 buildHTML();
+                logger(json);
             });
     }
 
@@ -193,8 +179,6 @@ $(function() {
     $('#resizer').change(function() {
         selected_id = $("input[name='options']:checked").attr('id');
         selected_val = $("input[name='options']:checked").attr('value');
-        console.log("@GB: selected_text = ", selected_val);
-        console.log("@GB: selected_id = ", selected_id);
         $('.maker-floated>figure').removeClass(width);
         $('.maker-floated>figure').addClass(selected_id);
         $('.percent').text(selected_val);
@@ -204,7 +188,6 @@ $(function() {
 
     $('#source-open').change(function() {
         selected_val = $("input[name='options']:checked").attr('value');
-        console.log("@GB: selected_val = ", selected_val);
         if (selected_val == "Shown") {
             startCollapsed = false;
             buildHTML();
@@ -220,11 +203,8 @@ $(function() {
         // Cancel the default action
         event.preventDefault();
         var btn = $(this);
-        console.log("@GB: btn = ", btn);
         var closest = btn.prev('.maker-copy');
-        console.log("@GB: closest = ", closest);
         var id = "." + btn.attr('id');
-        console.log("@GB: id = ", id);
         var paste = $(id).html();
         console.log("@GB: paste = ", paste);
 
