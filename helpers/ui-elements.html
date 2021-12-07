@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,54 @@
 	.nav-pills a.nav-link.active {background: #170052;color: #fff!important;}
 	.btn-link, .fake-link {color: #170052;}
 	li.nav-item, div#v-tabs-tab {color: #170052; font-weight: 700;}
+		
+/* --------------------------------------------------------------
+	START added styling to match Moodle styling 
+----------------------------------------------------------------*/
+	.alert.alert-success {
+		color: #3d5c1f;
+    		background-color: #f5f7f4;
+    		border-color: #3d5c1f;
+		}
+	.alert.alert-info {
+		color: #02567e;
+    		background-color: #e6eef2;
+    		border-color: #02567e;
+		}
+	.alert.alert-warning {
+		color: #b55600;
+		background-color: #fbf7f2;
+    		border-color: #b55600;
+		}
+	.alert.alert-danger {
+		color: #990f3d;
+    		background-color: #faf3f5;
+    		border-color: #990f3d;
+		}
+	.alert.alert-info, .alert.alert-success, .alert.alert-warning, .alert.alert-danger {
+		clear: both;
+    		border: 0;
+    		border-left: 3em solid;
+		}
+	.alert {
+		border-radius: 0;
+		}
+	.jumbotron {
+		border-radius: 0;
+		}
+	body {
+		background-color: rgb(248,248,248);
+		}
+		a {color: #170052;}
+		
+		.copythis {
+		background:white;
+			padding: 15px;
+		}
+		.copybutton {
+			background-color:#170052;
+		color:white;
+		margin-top:10px !important;}
 	</style>
 </head>
 
@@ -85,7 +134,7 @@
 <div class="collapse" id="HiddenContent1">
   <div class="card card-body">
 <!-- Start of Video box -->
-<div class="card well" style="padding: 10px">
+<div class="card well" style="padding: 10px !important">
     <h4 class="text-danger"><i class="fa fa-play-circle-o"></i> UI elements - Enrich your online learning content (06:40)</h4>
     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item vjs-tech" src="https://www.youtube.com/embed/P5VIC9_qm90?rel=0" allowfullscreen=""></iframe>
@@ -100,7 +149,7 @@
 	    <hr>
 	    <h2>Activities</h2>
 	    <div class="copythis"><!-- Activity box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
 	<h4 style="color: #c30 !important"><i aria-hidden="true" class="fa fa-tasks"></i> Learning Activity</h4>
     <p>Insert content here. Use this for basic activity information.</p>
 </div>
@@ -108,7 +157,7 @@
 		<hr>
 	    <h2 id="videoembeded">Video Embeded</h2>
 <div class="copythis"><!-- Video box -->
-<div class="well card" style="padding: 10px" style="padding: 10px">
+<div class="well card" style="padding: 10px" style="padding: 10px !important">
     <h4 class="text-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i> Name of video - playtime in brackets (00:00)</h4>
     <p>Insert video here</p>
     <div class="text-right">
@@ -182,7 +231,10 @@
     <div class="text-muted" style="opacity: 0.5; float: right">
         <small>Attribution goes here</small>
     </div>
+	
 </div>
+<p>Text goes here</p>	
+	<div class="clearfix container-fluid"></div>
 <!-- End of image placeholder --></div>
 <div class="clearfix container-fluid"></div>
         <hr>
@@ -218,62 +270,62 @@
 	    <hr>
         <h2>Boxes</h2>
 <div class="copythis"><!-- Think box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 class="text-success"><i aria-hidden="true" class="fa fa-lightbulb-o"></i> Think</h4>
     <p>Insert content here</p>
 </div>
 <!-- End of think box --></div>
         <hr>
 <div class="copythis"><!-- Start of Read box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px!important">
     <h4 class="text-info"><i aria-hidden="true" class="fa fa-book"></i> Read</h4>
     <p>Insert content here</p>
 </div>
 <!-- End of read box --></div>
         <hr>
 <div class="copythis"><!-- Start of Discuss box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 class="text-warning"><i aria-hidden="true" class="fa fa-comments"></i> Discuss</h4>
     <p>Insert content here</p>
 </div>
 <!-- End of discuss box --></div>
         <hr>
 <div class="copythis"><!-- Start of Important box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 class="text-danger"><i aria-hidden="true" class="fa fa-exclamation-triangle"></i> Important</h4>
     <p>Insert content here</p>
 </div>
 <!-- End of important box --></div>
         <hr>
 <div class="copythis"><!-- Start of Reflect box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 style="color: purple !important"><i aria-hidden="true" class="fa fa-search"></i> Reflect</h4>
     <p>Insert content here</p>
 </div>
 <!-- End of reflect box --></div>
         <hr>
 <div class="copythis"><!-- Start of Law/standard box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 style="color: #c30 !important"><i aria-hidden="true" class="fa fa-balance-scale"></i> Law/Standard</h4>
     <p>Insert content here</p>
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-info" role="alert">
         Check with your workplace or library for a copy of this standard.
     </div>
 </div>
 <!-- End of Law/standard box  box --></div>
         <hr>
 <div class="copythis"><!-- Start of Portfolio box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 class="text-success"><i aria-hidden="true" class="fa fa-flag"></i> Portfolio - [Name of Portfolio activity]</h4>
     <p>Insert description of portfolio activity here</p>
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-info" role="alert">
         Record your responses in your portfolio of evidence
     </div>
 </div>
 <!-- End of Portfolio box --></div>
         <hr>
 <div class="copythis"><!-- Start of Further information box -->
-<div class="well card" style="padding: 10px">
+<div class="well card" style="padding: 10px !important">
     <h4 style="color: #277A37 !important"><i aria-hidden="true" class="fa fa-info-circle"></i> Further information - [Description of information/link]</h4>
     <p>Insert content here</p>
 </div>
