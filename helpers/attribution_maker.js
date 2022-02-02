@@ -274,7 +274,6 @@ $(function() {
         <!-- End of Show/Hide interface, ID = ${id}-${i} -->` : ''}
     </small>
 </figcaption>
-<p>Text goes here</p>
 <div class="clearfix container-fluid"></div>
 <!-- End of image placeholder -->`;
         return snippet;
