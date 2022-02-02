@@ -273,7 +273,10 @@ $(function() {
         <a href="${img_orig}" target="_blank">${img_name}</a> by <a href="${user_url}" target="_blank">${user}</a> from <a href="${site_url}" target="_blank">${site}</a>, <a href="${licence_url}" target="_blank">${licence}</a>, added on ${today}${startCollapsed ? `</div>
         <!-- End of Show/Hide interface, ID = ${id}-${i} -->` : ''}
     </small>
-</figcaption>`;
+</figcaption>
+<p>Text goes here</p>
+<div class="clearfix container-fluid"></div>
+<!-- End of image placeholder -->`;
         return snippet;
     }
 
