@@ -437,9 +437,7 @@ $(function() {
         <a href="${img_orig}" target="_blank">${img_name}</a> by <a href="${user_url}" target="_blank">${user}</a> from <a href="${site_url}" target="_blank">${site}</a>, <a href="${licence_url}" target="_blank">${licence}</a>, added on ${today} ${startCollapsed ? `</div>
         <!-- End of Show/Hide interface, ID = ${id}-${i} -->` : ''}
     </small>
-</figcaption>
-<!-- End of Image Embed -->
-<p>[Insert Text here]</p>`;
+</figcaption>`;
         return snippet;
     }
 
@@ -448,9 +446,7 @@ $(function() {
         var snippet = `<img src="${img_src}" class="img-responsive img-fluid w-100" alt="${alt}"${title!==null ? ` title="${title}"` : ''}>
 <figcaption class="figure-caption text-muted small fw-lighter">
     <small><a href="${img_orig}" target="_blank">Image</a> by <a href="${user_url}" target="_blank">${user}</a> from <a href="${site_url}" target="_blank">${site}</a>, <a href="${licence_url}" target="_blank">${licence}</a>, added on ${today}</small>
-</figcaption>
-<!-- End of Image Embed -->
-<p>[Insert Text here]</p>`;
+</figcaption>`;
         return snippet;
     }
 
