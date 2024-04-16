@@ -182,7 +182,42 @@
             <p>Description/instruction</p>
         <div class="copythis">
             <!-- image-modal -->
-            <p>Insert code</p>
+            <!-- Start of View larger image -->
+<!-- Start of smaller image-->
+<figure class="figure border rounded p-1 bg-light text-right float-right ml-4 col-4"> <a type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+        <!-- Change smaller image here -->
+        <img src="https://via.placeholder.com/640x360?text=Small+image" class="img-responsive img-fluid">
+        <br>Click to view larger image</a>
+    <figcaption class="figure-caption text-muted small">
+        <small>
+            Image by [AUTHOR] from [WEBSITE], [LICENCE TYPE], added on [DATE ADDED]
+        </small> </figcaption>
+</figure>
+<!-- End of smaller image-->
+<p>Text goes here</p>
+<div class="clearfix container-fluid"></div>
+<!-- Start of larger image-->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button> </div>
+            <div class="modal-body">
+                <!-- Change larger image here -->
+                <figure class="figure border rounded p-1 bg-light text-right w-100">
+                    <img src="https://via.placeholder.com/1280x720?text=Large+image" class="img-responsive img-fluid">
+                    <br>
+                    <figcaption class="figure-caption text-muted small">
+                        <small>
+                            Image by [AUTHOR] from [WEBSITE], [LICENCE TYPE], added on [DATE ADDED]
+                        </small> </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+  
+</div>
+<!-- End of larger image-->
+<!-- End of view larger image -->
             <div class="clearfix"></div>
           <!-- End of image modal -->  
         </div> 
